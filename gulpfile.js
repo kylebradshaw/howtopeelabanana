@@ -12,7 +12,7 @@ var surge = require('gulp-surge');
 
 // Move HTML
 gulp.task('copy-files', function() {
-    gulp.src(['./index.html','images/*'],{
+    gulp.src(['./index.html','assets/images/*','assets/sounds/*'],{
       base: '.'
     })
     // Perform minification tasks, etc here
@@ -21,34 +21,34 @@ gulp.task('copy-files', function() {
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('js/*.js')
+    return gulp.src('assets/js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('css/*.scss')
+    return gulp.src('assets/css/*.scss')
         .pipe(sass())
         .pipe(autoprefixer({
-          browsers: ['last 5 versions'],
+          browsers: ['last 2 versions'],
           cascade: false
         }))
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('dist/assets/css'));
 });
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('js/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+    return gulp.src('assets/js/*.js')
+        // .pipe(uglify())
+        .pipe(gulp.dest('dist/assets/js'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('*.html', ['copy-files']);
-    gulp.watch('js/*.js', ['lint', 'scripts']);
-    gulp.watch('css/*.scss', ['sass']);
+    gulp.watch('assets/js/*.js', ['lint', 'scripts']);
+    gulp.watch('assets/css/*.scss', ['sass']);
 });
 
 // Default Task
