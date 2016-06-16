@@ -57,6 +57,6 @@ gulp.task('default', ['copy-files','lint', 'sass', 'scripts', 'watch']);
 gulp.task('deploy', [], function () {
   return surge({
     project: './dist',         // Path to your static build directory
-    domain: 'teeny-tiny-sail.surge.sh'  // Your domain or Surge subdomain
+    domain: 'www.howtopeelabanana.com'  // Your domain or Surge subdomain
   })
 })
