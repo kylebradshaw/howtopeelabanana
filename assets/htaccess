@@ -1,0 +1,7 @@
+AddDefaultCharset utf-8
+RewriteEngine On
+
+Options -Indexes
+
+RewriteCond %{HTTP_HOST} ^howtopeelabanana.com*
+RewriteRule (.*) http://www.youtube.com/watch?v=nBJV56WUDng [R=301,QSA,L]
