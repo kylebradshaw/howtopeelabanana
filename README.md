@@ -1,3 +1,10 @@
+# README
+
 <http://howtopeelabanana.com>
 
-The lack of surge.sh instructions is disheartening.
+<https://howtopeelabanana.netlify.app>
+
+Repository: <https://github.com/kylebradshaw/howtopeelabanana>
+
+To compile: `npx gulp@3.9.1`
+To serve: `npx live-server dist/`
